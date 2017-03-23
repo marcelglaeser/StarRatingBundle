@@ -98,7 +98,7 @@ or for a custom rating scale:
     ]);
     // ...
 ```
-to enable resetable:
+to enable resettable:
 ```php
 <?php
     // ...
