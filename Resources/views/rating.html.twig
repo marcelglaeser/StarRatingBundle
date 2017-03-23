@@ -9,6 +9,9 @@
         {% for star in 1..stars %}
           <div id="rating_star_{{ stars - star + 1 }}" class="star" data-value="{{ stars - star + 1 }}"></div>
         {% endfor %}
+        {% if resettable %}
+        <div id="rating_star_reset" class="star-reset" data-value="0"></div>
+        {% endif %}
       </div>
     </div>
   {% endspaceless %}
