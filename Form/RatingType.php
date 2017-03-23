@@ -14,7 +14,8 @@ class RatingType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars = array_replace($view->vars, [
-            'stars' => $options['stars']
+            'stars' => $options['stars'],
+            'resettable' => $options['resettable']
         ]);
     }
 
@@ -26,6 +27,7 @@ class RatingType extends AbstractType
             ],
             'scale' => 1,
             'stars' => 5,
+            'resettable' => false,
         ]);
     }
 
