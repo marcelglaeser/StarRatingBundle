@@ -98,6 +98,17 @@ or for a custom rating scale:
     ]);
     // ...
 ```
+to enable resetable:
+```php
+<?php
+    // ...
+    $builder->add('rating', RatingType::class, [
+    	//...
+    	'resetable' => true,
+    	//...
+    ]);
+    // ...
+```
 
 ###Display in a twig template using the rating filter
 ```
