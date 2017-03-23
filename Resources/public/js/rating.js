@@ -1,5 +1,5 @@
-$(function(){
-    var labelWasClicked = function labelWasClicked(){
+$(function () {
+    var labelWasClicked = function labelWasClicked() {
         var input = $(this).siblings().filter('input');
         if (input.attr('disabled')) {
             return;
@@ -7,20 +7,20 @@ $(function(){
         input.val($(this).attr('data-value'));
     }
 
-    var turnToStar = function turnToStar(){
+    var turnToStar = function turnToStar() {
         if ($(this).find('input').attr('disabled')) {
             return;
         }
-        var labels = $(this).find('div');
+        var labels = $(this).find('div').filter(':not(#rating_star_reset)');
         labels.removeClass();
         labels.addClass('star');
     }
 
-    var turnStarBack = function turnStarBack(){
+    var turnStarBack = function turnStarBack() {
         var rating = parseInt($(this).find('input').val());
         if (rating > 0) {
-            var selectedStar = $(this).children().filter('#rating_star_'+rating)
-            var prevLabels = $(selectedStar).nextAll();
+            var selectedStar = $(this).children().filter('#rating_star_' + rating);
+            var prevLabels = $(selectedStar).nextAll().filter(':not(#rating_star_reset)');
             prevLabels.removeClass();
             prevLabels.addClass('star-full');
             selectedStar.removeClass();
@@ -28,8 +28,8 @@ $(function(){
         }
     }
 
-    $('.star, .rating-well').click(labelWasClicked);
+    $('.star, .star-reset, .rating-well').click(labelWasClicked);
     $('.rating-well').each(turnStarBack);
-    $('.rating-well').hover(turnToStar,turnStarBack);
+    $('.rating-well').hover(turnToStar, turnStarBack);
 
 });
