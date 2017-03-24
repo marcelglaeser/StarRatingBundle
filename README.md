@@ -99,6 +99,10 @@ or for a custom rating scale:
     // ...
 ```
 to enable resettable:
+Reset resets the value to 0.
+
+![resettable](https://cloud.githubusercontent.com/assets/6400771/24266249/73591b78-1006-11e7-87b5-04937893ad2f.png)
+
 ```php
 <?php
     // ...
